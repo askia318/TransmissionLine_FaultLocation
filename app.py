@@ -75,7 +75,7 @@ def main():
                 'ICang': ICang, 'ICang2': ICang2, 'ICmag': ICmag, 'ICmag2': ICmag2,
                 'VAang1': VAang1, 'VAang2': VAang2, 'VAmag1': VAmag1, 'VAmag2': VAmag2,
                 'VBang1': VBang1, 'VBang2': VBang2, 'VBmag1': VBmag1, 'VBmag2': IBmag2,
-                'VCang1': VCang1, 'VCang2': VCang2, 'VCmag1': ICmag1, 'VCmag2': VCmag2,
+                'VCang1': VCang1, 'VCang2': VCang2, 'VCmag1': ICmag1, 'VCmag2': VCmag2
                 }
     features_df = pd.DataFrame([features])
 
