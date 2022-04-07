@@ -21,7 +21,7 @@ def prediction(
     VAang1, VAang2, VAmag1,
     VAmag2, VBang1, VBang2,
     VBmag1, VBmag2, VCang1,
-    VCang2, VCmag1, VCmag2
+    VCang2, VCmag1, VCmag2. Location
 ):
 
     # Making predictions
@@ -33,7 +33,7 @@ def prediction(
     VAang1, VAang2, VAmag1,
     VAmag2, VBang1, VBang2,
     VBmag1, VBmag2, VCang1,
-    VCang2, VCmag1, VCmag2]])
+    VCang2, VCmag1, VCmag2, Location]])
 
     if prediction == 0:
         pred = '0%'
@@ -69,6 +69,11 @@ def main():
     #st.image((image, caption='Taipower')
 
     # following lines create boxes in which user can enter data required to make prediction
+    left_column, right_column = st.columns(2)
+    with left_column:
+        Location = st.radio(
+            'The expected fault location', [0, 1, 2, 3])
+
     IAang = st.slider('IAang', float(data['Min'].loc[0]), float(data['Max'].loc[0]))
     IAang2 = st.slider('IAang2', float(data['Min'].loc[1]), float(data['Max'].loc[1]))
     IAmag = st.slider('IAmag', float(data['Min'].loc[2]), float(data['Max'].loc[2]))
@@ -109,7 +114,7 @@ def main():
     VAang1, VAang2, VAmag1,
     VAmag2, VBang1, VBang2,
     VBmag1, VBmag2, VCang1,
-    VCang2, VCmag1, VCmag2)
+    VCang2, VCmag1, VCmag2, Location)
         st.success('The Fault Location is  {}'.format(result))
 
 if __name__ == '__main__':
