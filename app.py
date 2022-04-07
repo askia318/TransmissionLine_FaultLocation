@@ -58,8 +58,8 @@ def main():
     </div> 
     """
 
-    from PIL import Image
-    image = Image.open('taipower.png')
+    #from PIL import Image
+    #image = Image.open('taipower.png')
 
     # display the front end aspect
     #st.markdown(html_temp, unsafe_allow_html=True)
@@ -68,30 +68,30 @@ def main():
     #st.image((image, caption='Taipower')
 
     # following lines create boxes in which user can enter data required to make prediction
-    IAang = st.slider('IAang', data['Min'].loc[0], data['Max'].loc[0])
-    IAang2 = st.slider('IAang2', data['Min'].loc[1], data['Max'].loc[1])
-    IAmag = st.slider('IAmag', data['Min'].loc[2], data['Max'].loc[2])
-    IAmag2 = st.slider('IAmag2', data['Min'].loc[3], data['Max'].loc[3])
-    IBang = st.slider('IBang', data['Min'].loc[4], data['Max'].loc[4])
-    IBang2 = st.slider('IBang2', data['Min'].loc[5], data['Max'].loc[5])
-    IBmag = st.slider('IBmag', data['Min'].loc[6], data['Max'].loc[6])
-    IBmag2 = st.slider('IBmag2', data['Min'].loc[7], data['Max'].loc[7])
-    ICang = st.slider('ICang', data['Min'].loc[8], data['Max'].loc[8])
-    ICang2 = st.slider('ICang2', data['Min'].loc[9], data['Max'].loc[9])
-    ICmag = st.slider('ICmag', data['Min'].loc[10], data['Max'].loc[10])
-    ICmag2 = st.slider('ICmag2', data['Min'].loc[11], data['Max'].loc[11])
-    VAang1 = st.slider('VAang1', data['Min'].loc[12], data['Max'].loc[12])
-    VAang2 = st.slider('VAang2', data['Min'].loc[13], data['Max'].loc[13])
-    VAmag1 = st.slider('VAmag1', data['Min'].loc[14], data['Max'].loc[14])
-    VAmag2 = st.slider('VAmag2', data['Min'].loc[15], data['Max'].loc[15])
-    VBang1 = st.slider('VBang1', data['Min'].loc[16], data['Max'].loc[16])
-    VBang2 = st.slider('VBang2', data['Min'].loc[17], data['Max'].loc[17])
-    VBmag1 = st.slider('VBmag1', data['Min'].loc[18], data['Max'].loc[18])
-    VBmag2 = st.slider('VBmag2', data['Min'].loc[19], data['Max'].loc[19])
-    VCang1 = st.slider('VCang1', data['Min'].loc[20], data['Max'].loc[20])
-    VCang2 = st.slider('VCang2', data['Min'].loc[21], data['Max'].loc[21])
-    VCmag1 = st.slider('VCmag1', data['Min'].loc[22], data['Max'].loc[22])
-    VCmag2 = st.slider('VCmag2',data['Min'].loc[23], data['Max'].loc[23])
+    IAang = st.slider('IAang', data['Min'].loc[0].astype(float), data['Max'].loc[0].astype(float))
+    IAang2 = st.slider('IAang2', data['Min'].loc[1].astype(float), data['Max'].loc[1].astype(float))
+    IAmag = st.slider('IAmag', data['Min'].loc[2].astype(float), data['Max'].loc[2].astype(float))
+    IAmag2 = st.slider('IAmag2', data['Min'].loc[3].astype(float), data['Max'].loc[3].astype(float))
+    IBang = st.slider('IBang', data['Min'].loc[4].astype(float), data['Max'].loc[4].astype(float))
+    IBang2 = st.slider('IBang2', data['Min'].loc[5].astype(float), data['Max'].loc[5].astype(float))
+    IBmag = st.slider('IBmag', data['Min'].loc[6].astype(float), data['Max'].loc[6].astype(float))
+    IBmag2 = st.slider('IBmag2', data['Min'].loc[7].astype(float), data['Max'].loc[7].astype(float))
+    ICang = st.slider('ICang', data['Min'].loc[8].astype(float), data['Max'].loc[8].astype(float))
+    ICang2 = st.slider('ICang2', data['Min'].loc[9].astype(float), data['Max'].loc[9].astype(float))
+    ICmag = st.slider('ICmag', data['Min'].loc[10].astype(float), data['Max'].loc[10].astype(float))
+    ICmag2 = st.slider('ICmag2', data['Min'].loc[11].astype(float), data['Max'].loc[11].astype(float))
+    VAang1 = st.slider('VAang1', data['Min'].loc[12].astype(float), data['Max'].loc[12].astype(float))
+    VAang2 = st.slider('VAang2', data['Min'].loc[13].astype(float), data['Max'].loc[13].astype(float))
+    VAmag1 = st.slider('VAmag1', data['Min'].loc[14].astype(float), data['Max'].loc[14].astype(float))
+    VAmag2 = st.slider('VAmag2', data['Min'].loc[15].astype(float), data['Max'].loc[15].astype(float))
+    VBang1 = st.slider('VBang1', data['Min'].loc[16].astype(float), data['Max'].loc[16].astype(float))
+    VBang2 = st.slider('VBang2', data['Min'].loc[17].astype(float), data['Max'].loc[17].astype(float))
+    VBmag1 = st.slider('VBmag1', data['Min'].loc[18].astype(float), data['Max'].loc[18].astype(float))
+    VBmag2 = st.slider('VBmag2', data['Min'].loc[19].astype(float), data['Max'].loc[19].astype(float))
+    VCang1 = st.slider('VCang1', data['Min'].loc[20].astype(float), data['Max'].loc[20].astype(float))
+    VCang2 = st.slider('VCang2', data['Min'].loc[21].astype(float), data['Max'].loc[21].astype(float))
+    VCmag1 = st.slider('VCmag1', data['Min'].loc[22].astype(float), data['Max'].loc[22].astype(float))
+    VCmag2 = st.slider('VCmag2',data['Min'].loc[23].astype(float), data['Max'].loc[23].astype(float))
 
 
 
