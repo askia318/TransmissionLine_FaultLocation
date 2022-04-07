@@ -72,7 +72,7 @@ def main():
     left_column, right_column = st.columns(2)
     with left_column:
         Location = st.radio(
-            'The expected fault location', [0, 1, 2, 3])
+            'The expected fault location', ['0', '1', '2', '3'])
 
     IAang = st.slider('IAang', float(data['Min'].loc[0]), float(data['Max'].loc[0]))
     IAang2 = st.slider('IAang2', float(data['Min'].loc[1]), float(data['Max'].loc[1]))
