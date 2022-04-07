@@ -45,8 +45,10 @@ def prediction(
 def main():
     # front end elements of the web page
     html_temp = """ 
-    <div style ="background-color:yellow;padding:13px"> 
-    <h1 style ="color:black;text-align:center;">Transmission Line Fault Location Prediction ML App</h1> 
+    <div style ="background-color:blue;padding:13px"> 
+    <h1 style ="color:black;text-align:center;">Transmission Line Fault Location Prediction App</h1>
+    <h2 style ="color:grey;text-align:center;">by HV-Lab Dr. Cheng-Chung Li</h2>
+    <img src="taipower.png" with="466" heigh="466" alt="Taipower">
     </div> 
     """
 
@@ -66,17 +68,17 @@ def main():
     Subsystem_1_CTLs_Vars_ICang2 = st.number_input("Subsystem_1_CTLs_Vars_ICang2")
     Subsystem_1_CTLs_Vars_ICmag = st.number_input("Subsystem_1_CTLs_Vars_ICmag")
     Subsystem_1_CTLs_Vars_ICmag2 = st.number_input("Subsystem_1_CTLs_Vars_ICmag2")
-    Subsystem_1_CTLs_Vars_VAang = st.number_input("Subsystem_1_CTLs_Vars_VAang1")
+    Subsystem_1_CTLs_Vars_VAang1 = st.number_input("Subsystem_1_CTLs_Vars_VAang1")
     Subsystem_1_CTLs_Vars_VAang2 = st.number_input("Subsystem_1_CTLs_Vars_VAang2")
-    Subsystem_1_CTLs_Vars_VAmag = st.number_input("Subsystem_1_CTLs_Vars_VAmag1")
+    Subsystem_1_CTLs_Vars_VAmag1 = st.number_input("Subsystem_1_CTLs_Vars_VAmag1")
     Subsystem_1_CTLs_Vars_VAmag2 = st.number_input("Subsystem_1_CTLs_Vars_VAmag2")
-    Subsystem_1_CTLs_Vars_VBang = st.number_input("Subsystem_1_CTLs_Vars_VBang1")
+    Subsystem_1_CTLs_Vars_VBang1 = st.number_input("Subsystem_1_CTLs_Vars_VBang1")
     Subsystem_1_CTLs_Vars_VBang2 = st.number_input("Subsystem_1_CTLs_Vars_VBang2")
-    Subsystem_1_CTLs_Vars_VBmag = st.number_input("Subsystem_1_CTLs_Vars_VBmag1")
+    Subsystem_1_CTLs_Vars_VBmag1 = st.number_input("Subsystem_1_CTLs_Vars_VBmag1")
     Subsystem_1_CTLs_Vars_VBmag2 = st.number_input("Subsystem_1_CTLs_Vars_VBmag2")
-    Subsystem_1_CTLs_Vars_VCang = st.number_input("Subsystem_1_CTLs_Vars_VCang1")
+    Subsystem_1_CTLs_Vars_VCang1 = st.number_input("Subsystem_1_CTLs_Vars_VCang1")
     Subsystem_1_CTLs_Vars_VCang2 = st.number_input("Subsystem_1_CTLs_Vars_VCang2")
-    Subsystem_1_CTLs_Vars_VCmag = st.number_input("Subsystem_1_CTLs_Vars_VCmag1")
+    Subsystem_1_CTLs_Vars_VCmag1 = st.number_input("Subsystem_1_CTLs_Vars_VCmag1")
     Subsystem_1_CTLs_Vars_VCmag2 = st.number_input("Subsystem_1_CTLs_Vars_VCmag2")
 
 
