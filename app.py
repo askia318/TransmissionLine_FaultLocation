@@ -21,7 +21,7 @@ def prediction(
     VAang1, VAang2, VAmag1,
     VAmag2, VBang1, VBang2,
     VBmag1, VBmag2, VCang1,
-    VCang2, VCmag1, VCmag2. Location
+    VCang2, VCmag1, VCmag2, Location
 ):
 
     # Making predictions
