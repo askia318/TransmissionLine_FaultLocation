@@ -99,7 +99,7 @@ def main():
                     'VBang1', 'VBang2', 'VBmag1', 'VBmag2',
                     'VCang1', 'VCang2', 'VCmag1', 'VCmag2']
 
-    agree = st.checkbox('Selected')
+    agree = st.button('Selected')
 
     if agree:
         model = load_model(select_model)
