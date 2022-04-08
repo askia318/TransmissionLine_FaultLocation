@@ -23,6 +23,8 @@ numeric_list = ['IAang', 'IAang2','IAmag', 'IAmag2',
                 'VBang1', 'VBang2', 'VBmag1', 'VBmag2',
                 'VCang1', 'VCang2', 'VCmag1', 'VCmag2']
 
+
+model = load_model('Extra_Trees')
 exp_mcllf101 = setup(data = result,
             target='Location',
             session_id=123,
@@ -33,7 +35,6 @@ exp_mcllf101 = setup(data = result,
             feature_selection = True,
             silent=True
             )
-model = load_model('Extra_Trees')
 
 # this is the main function in which we define our webpage
 def main():
