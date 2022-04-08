@@ -126,10 +126,10 @@ def main():
         else:
             precentage= '75%'
             
-    st.subheader('The Prediction: ')
-    st.write('The selected model is '+str(select_model) + '.')
-    st.write('Based on the input feature values, the predict location is '+ str(precentage), 'and its score is ' + str(pred_score) +'.')
-    st.balloons()
+        st.subheader('The Prediction: ')
+        st.write('The selected model is '+str(select_model) + '.')
+        st.write('Based on the input feature values, the predict location is '+ str(precentage), 'and its score is ' + str(pred_score) +'.')
+        st.balloons()
 
 if __name__ == '__main__':
     main()
