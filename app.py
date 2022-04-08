@@ -51,7 +51,7 @@ def main():
                 the expected fault location of a transmission line.')
 
     st.image('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Taiwan_Power_Company_Seal.svg/220px-Taiwan_Power_Company_Seal.svg.png',
-             caption='Taipower', width = 466, use_column_width= auto)
+             caption='Taipower', width = 466, use_column_width= 'auto')
 
     # following lines create boxes in which user can enter data required to make prediction
 
