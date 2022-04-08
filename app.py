@@ -1,4 +1,4 @@
-from pycaret.classification import load_model, predict_model
+#from pycaret.classification import load_model, predict_model
 from pycaret.classification import *
 import streamlit as st
 import pandas as pd
@@ -50,7 +50,8 @@ def main():
                 and their goal is to predict \
                 the expected fault location of a transmission line.')
 
-    #st.image((image, caption='Taipower')
+    st.image('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Taiwan_Power_Company_Seal.svg/220px-Taiwan_Power_Company_Seal.svg.png',
+             caption='Taipower', width = 466, use_column_width= auto)
 
     # following lines create boxes in which user can enter data required to make prediction
 
@@ -100,9 +101,9 @@ def main():
 
     features_df_A = pd.DataFrame([features_A])
     features_df_V = pd.DataFrame([features_V])
-    st.subheader('Current Fetures')
+    st.subheader('Current Features')
     st.table(features_df_A)
-    st.subheader('Voltage Fetures')
+    st.subheader('Voltage Features')
     st.table(features_df_V)
 
     # when 'Predict' is clicked, make the prediction and store it
@@ -111,7 +112,7 @@ def main():
         pred_score = predict_score(model, features_df)
 
         st.write('Based on feature values, the predict location is '+ str(prediction), 'and its score is ' + str(pred_score))
-        st.ballons()
+        st.balloons()
 
 if __name__ == '__main__':
     main()
