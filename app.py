@@ -12,11 +12,28 @@ def predict_score(model, df):
     predictions_data = predict_model(estimator=model, data=df)
     return predictions_data['Score'][0]
 
-
-model = load_model('Extra_Trees')
-
 # loading the dataset
 data = pd.read_csv("minmax.csv")
+result = pd.read_csv('result.csv', index_col=[0])
+
+numeric_list = ['IAang', 'IAang2','IAmag', 'IAmag2',
+                'IBang',  'IBang2', 'IBmag', 'IBmag2',
+                'ICang', 'ICang2', 'ICmag', 'ICmag2',
+                'VAang1', 'VAang2', 'VAmag1', 'VAmag2',
+                'VBang1', 'VBang2', 'VBmag1', 'VBmag2',
+                'VCang1', 'VCang2', 'VCmag1', 'VCmag2']
+
+exp_mcllf101 = setup(data = result,
+            target='Location',
+            session_id=123,
+            numeric_features = numeric_list,
+            normalize = True,
+            remove_multicollinearity = True,
+            remove_outliers = True,
+            feature_selection = True,
+            silent=True
+            )
+model = load_model('Extra_Trees')
 
 # this is the main function in which we define our webpage
 def main():
