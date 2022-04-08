@@ -123,9 +123,11 @@ def main():
             precentage = "25%"
         elif prediction == '2':
             precentage= '50%'
-        else:
+        elif prediction == '3':
             precentage= '75%'
-            
+        else:
+            precentage = 'undetermined'
+
         st.subheader('The Prediction: ')
         st.write('The selected model is '+str(select_model) + '.')
         st.write('Based on the input feature values, the predict location is '+ str(precentage), 'and its score is ' + str(pred_score) +'.')
