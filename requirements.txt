@@ -3,7 +3,5 @@ pandas
 numpy
 sklearn
 scikit-learn
-seaborn
-matplotlib
-hyperopt
 pycaret
+
