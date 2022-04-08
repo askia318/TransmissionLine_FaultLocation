@@ -12,20 +12,6 @@ def predict_score(model, df):
     predictions_data = predict_model(estimator=model, data=df)
     return predictions_data['Score'][0]
 
-def load_model(sel_model):
-    model = load_model(sel_model)
-    exp_mcllf101 = setup(data=result,
-                         target='Location',
-                         session_id=123,
-                         numeric_features=numeric_list,
-                         normalize=True,
-                         remove_multicollinearity=True,
-                         remove_outliers=True,
-                         feature_selection=True,
-                         silent=True
-                         )
-    return model
-
 # loading the dataset
 data = pd.read_csv("minmax.csv")
 result = pd.read_csv('result.csv', index_col=[0])
@@ -113,10 +99,17 @@ def main():
                     'VBang1', 'VBang2', 'VBmag1', 'VBmag2',
                     'VCang1', 'VCang2', 'VCmag1', 'VCmag2']
 
-    agree = st.button('Selected')
-
-    if agree:
-        model = load_model(select_model)
+    model = load_model(sel_model)
+    exp_mcllf101 = setup(data=result,
+                         target='Location',
+                         session_id=123,
+                         numeric_features=numeric_list,
+                         normalize=True,
+                         remove_multicollinearity=True,
+                         remove_outliers=True,
+                         feature_selection=True,
+                         silent=True
+                         )
 
     # when 'Predict' is clicked, make the prediction and store it
     if st.button("Predict"):
