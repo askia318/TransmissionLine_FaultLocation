@@ -117,13 +117,13 @@ def main():
         prediction = predict_location(model, features_df)
         pred_score = predict_score(model, features_df)
 
-        if prediction =='0':
+        if str(prediction) =='0':
             precentage= '0%'
-        elif prediction == '1':
+        elif str(prediction) == '1':
             precentage = "25%"
-        elif prediction == '2':
+        elif str(prediction) == '2':
             precentage= '50%'
-        elif prediction == '3':
+        elif str(prediction) == '3':
             precentage= '75%'
         else:
             precentage = 'undetermined'
