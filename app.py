@@ -99,7 +99,7 @@ def main():
                     'VBang1', 'VBang2', 'VBmag1', 'VBmag2',
                     'VCang1', 'VCang2', 'VCmag1', 'VCmag2']
 
-    model = load_model(sel_model)
+    model = load_model(select_model)
     exp_mcllf101 = setup(data=result,
                          target='Location',
                          session_id=123,
