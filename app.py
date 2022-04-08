@@ -1,4 +1,3 @@
-#from pycaret.classification import load_model, predict_model
 from pycaret.classification import *
 import streamlit as st
 import pandas as pd
@@ -17,25 +16,6 @@ def predict_score(model, df):
 data = pd.read_csv("minmax.csv")
 result = pd.read_csv('result.csv', index_col=[0])
 
-numeric_list = ['IAang', 'IAang2','IAmag', 'IAmag2',
-                'IBang',  'IBang2', 'IBmag', 'IBmag2',
-                'ICang', 'ICang2', 'ICmag', 'ICmag2',
-                'VAang1', 'VAang2', 'VAmag1', 'VAmag2',
-                'VBang1', 'VBang2', 'VBmag1', 'VBmag2',
-                'VCang1', 'VCang2', 'VCmag1', 'VCmag2']
-
-
-model = load_model('Extra_Trees')
-exp_mcllf101 = setup(data = result,
-            target='Location',
-            session_id=123,
-            numeric_features = numeric_list,
-            normalize = True,
-            remove_multicollinearity = True,
-            remove_outliers = True,
-            feature_selection = True,
-            silent=True
-            )
 
 # this is the main function in which we define our webpage
 def main():
@@ -102,16 +82,49 @@ def main():
     features_df_A = pd.DataFrame([features_A])
     features_df_V = pd.DataFrame([features_V])
     st.subheader('Current Features')
-    st.table(features_df_A)
+    st.dataframe(features_df_A)
     st.subheader('Voltage Features')
-    st.table(features_df_V)
+    st.dataframe(features_df_V)
+
+    st.subheader('Select Model')
+    model_list = ['Extra_Trees', 'Random_Forest', 'Light_GBM', 'Voting', 'Stacker']
+    select_model = st.radio("Pick one model to predict", model_list)
+
+    numeric_list = ['IAang', 'IAang2', 'IAmag', 'IAmag2',
+                    'IBang', 'IBang2', 'IBmag', 'IBmag2',
+                    'ICang', 'ICang2', 'ICmag', 'ICmag2',
+                    'VAang1', 'VAang2', 'VAmag1', 'VAmag2',
+                    'VBang1', 'VBang2', 'VBmag1', 'VBmag2',
+                    'VCang1', 'VCang2', 'VCmag1', 'VCmag2']
+
+    model = load_model(select_model)
+    exp_mcllf101 = setup(data=result,
+                         target='Location',
+                         session_id=123,
+                         numeric_features=numeric_list,
+                         normalize=True,
+                         remove_multicollinearity=True,
+                         remove_outliers=True,
+                         feature_selection=True,
+                         silent=True
+                         )
 
     # when 'Predict' is clicked, make the prediction and store it
     if st.button("Predict"):
+        precentage = ''
         prediction = predict_location(model, features_df)
         pred_score = predict_score(model, features_df)
 
-        st.write('Based on feature values, the predict location is '+ str(prediction), 'and its score is ' + str(pred_score))
+        if prediction =='0':
+            precentage= '0%'
+        elif prediction == '1':
+            precentage = "25%"
+        elif prediction == '2':
+            precentage= '50%'
+        else:
+            precentage= '75%'
+
+        st.write('Based on feature values, the predict location is '+ str(precentage), 'and its score is ' + str(pred_score))
         st.balloons()
 
 if __name__ == '__main__':
